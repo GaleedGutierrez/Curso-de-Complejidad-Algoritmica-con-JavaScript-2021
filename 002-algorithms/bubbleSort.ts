@@ -4,22 +4,23 @@
 
 /**
 	* Complejidad Temporal -> O(n^2)
-	* Complejidad Espacial -> O()
+	* Complejidad Espacial -> O(n)
+	* Espacio Auxiliar = O(n) - O(4) -> O(1)
 */
 
-function bubbleSort(arreglo: unknown[][]) {
+function bubbleSort(arreglo: unknown[][]) { // O(n)
 	const longitud = arreglo.length; // O(1)
 
-	for (let i = 0; i < longitud; i++) { // O(n^2)
-		for (let j = 0; j < longitud; j++) { // O(n)
-			if (arreglo[j] > arreglo[j + 1]) { // O(1)
+	for (let i = 0; i < longitud; i++) { // O(1)
+		for (let j = 0; j < longitud; j++) { // O(1)
+			if (arreglo[j] > arreglo[j + 1]) {
 				const temporal = arreglo[j]; // O(1)
 
-				arreglo[j] = arreglo[j + 1]; // O(1)
-				arreglo[j + 1] = temporal; // O(1)
+				arreglo[j] = arreglo[j + 1];
+				arreglo[j + 1] = temporal;
 			}
 		}
 	}
 
-	return arreglo; // O(1)
+	return arreglo;
 }
